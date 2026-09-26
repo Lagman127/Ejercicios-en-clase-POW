@@ -1,0 +1,37 @@
+/* ========================================== */
+/* ARCHIVO: styles.css                        */
+/* Estilos Personalizados y Animaciones       */
+/* ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* Animación de entrada para elementos agregados al DOM */
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dom-enter-animation {
+    animation: fadeInSlide 0.35s ease-out forwards;
+}
+
+/* Ocultar scrollbar secundaria si es necesario */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

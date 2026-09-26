@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal & Hoja de Vida</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+    <!-- PRESENTACIÓN Y FOTO DE PERFIL -->
+    <header class="max-w-4xl mx-auto m-6 p-6 bg-white rounded-2xl shadow-sm border border-slate-200 flex items-center gap-6">
+        <div class="relative group">
+            <img id="profile-img-preview" src="https://placehold.co/300x300" class="w-32 h-32 rounded-full object-cover ring-4 ring-indigo-100">
+            <label for="profile-img-input" class="absolute inset-0 bg-black/40 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer rounded-full transition-opacity">
+                <span>Cambiar Foto</span>
+            </label>
+            <input type="file" id="profile-img-input" accept="image/*" class="hidden">
+        </div>
+        <div>
+            <h1 class="text-3xl font-bold">Alex R. Morgan</h1>
+            <p class="text-indigo-600 font-medium">Desarrollador Full Stack & UI/UX</p>
+            <p class="text-slate-500 text-sm mt-2">Creando soluciones web modernas con HTML, CSS y JS nativo.</p>
+        </div>
+    </header>
+
+    <!-- SECCIÓN HISTORIAL ACADÉMICO -->
+    <section class="max-w-4xl mx-auto m-6 p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Historial Académico</h2>
+            <button id="btn-toggle-edu-form" class="bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-sm">+ Agregar Educación</button>
+        </div>
+
+        <form id="form-edu" class="hidden bg-slate-50 p-4 rounded-xl mb-4 space-y-3">
+            <input type="text" id="edu-title" placeholder="Título" class="w-full p-2 border rounded-md" required>
+            <input type="text" id="edu-institution" placeholder="Institución" class="w-full p-2 border rounded-md" required>
+            <input type="text" id="edu-year" placeholder="Año / Periodo" class="w-full p-2 border rounded-md" required>
+            <button type="submit" class="bg-indigo-600 text-white px-4 py-1.5 rounded-md text-sm">Guardar</button>
+        </form>
+
+        <div id="education-list" class="space-y-3">
+            <!-- Los elementos se agregan dinámicamente aquí -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN HISTORIAL LABORAL -->
+    <section class="max-w-4xl mx-auto m-6 p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">Historial Laboral</h2>
+            <button id="btn-toggle-work-form" class="bg-indigo-600 text-white px-3 py-1.5 rounded-lg text-sm">+ Agregar Experiencia</button>
+        </div>
+
+        <form id="form-work" class="hidden bg-slate-50 p-4 rounded-xl mb-4 space-y-3">
+            <input type="text" id="work-role" placeholder="Cargo" class="w-full p-2 border rounded-md" required>
+            <input type="text" id="work-company" placeholder="Empresa" class="w-full p-2 border rounded-md" required>
+            <input type="text" id="work-period" placeholder="Periodo" class="w-full p-2 border rounded-md" required>
+            <textarea id="work-desc" placeholder="Descripción" class="w-full p-2 border rounded-md" required></textarea>
+            <button type="submit" class="bg-indigo-600 text-white px-4 py-1.5 rounded-md text-sm">Guardar</button>
+        </form>
+
+        <div id="work-list" class="space-y-3">
+            <!-- Los elementos se agregan dinámicamente aquí -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-6 text-slate-500 text-sm">
+        <p>&copy; <span id="current-year"></span> Alex R. Morgan. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
